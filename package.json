@@ -1,0 +1,40 @@
+{
+  "name": "meterkit-lite",
+  "version": "0.1.0",
+  "description": "Free MIT token metering & cost tracking for Next.js AI apps — the open funnel for MeterKit.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./ui/theme.css": "./src/ui/theme.css"
+  },
+  "sideEffects": false,
+  "engines": { "node": ">=18.17" },
+  "scripts": {
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["ai", "tokens", "metering", "openai", "nextjs", "cost", "llm"],
+  "homepage": "https://meterkit.dev",
+  "repository": { "type": "git", "url": "https://github.com/meterkit/meterkit-lite" },
+  "peerDependencies": { "react": ">=18", "react-dom": ">=18" },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitest/coverage-v8": "^2.1.9",
+    "jsdom": "^29.1.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
