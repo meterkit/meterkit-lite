@@ -408,3 +408,23 @@
   /* without the animation, the opacity:0 setup would hide the line/area */
   .mk-chart-line.mk-anim, .mk-chart-area.mk-anim { opacity: 1; }
 }
+
+/* ---------- 9. LiteDashboard: locked Pro upsell slot ---------- */
+/* Where Pro would render a live quota/spend-cap meter, Lite shows this locked
+   card instead — same surface language as the rest of the console, but the
+   dashed border + lock glyph mark it as a boundary, not a bug. */
+.mk-lite-locked {
+  display: flex; align-items: flex-start; gap: var(--mk-space-4);
+  background: color-mix(in oklab, var(--mk-surface-2) 60%, transparent);
+  border: 1px dashed var(--mk-border-strong);
+}
+.mk-lite-locked .mk-lock {
+  flex: none; font-size: var(--mk-text-xl); line-height: 1;
+  filter: grayscale(1) opacity(0.75);
+}
+.mk-lite-locked strong {
+  display: block; font-size: var(--mk-text-s); color: var(--mk-text);
+  margin-bottom: var(--mk-space-1);
+}
+.mk-lite-locked p { margin: 0; font-size: var(--mk-text-s); line-height: 1.5; }
+.mk-lite-locked b { color: var(--mk-accent-2); font-weight: 650; }
