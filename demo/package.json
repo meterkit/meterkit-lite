@@ -1,0 +1,19 @@
+{
+  "name": "meterkit-lite-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 4310",
+    "start": "next start -p 4310",
+    "build": "next build"
+  },
+  "dependencies": {
+    "meterkit-lite": "file:..",
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1"
+  }
+}

@@ -35,7 +35,7 @@ Render the dashboard:
 
 ```tsx
 import { LiteDashboard, sampleLiteData } from 'meterkit-lite';
-import 'meterkit-lite/ui/theme.css';
+import 'meterkit-lite/ui/lite-dashboard.css'; // tokens + dashboard styles (re-exports theme.css)
 
 <LiteDashboard data={sampleLiteData} />
 ```
