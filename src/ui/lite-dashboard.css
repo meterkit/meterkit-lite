@@ -68,3 +68,33 @@
 @media (prefers-reduced-motion: reduce) {
   .mk-locked-content > * { transition: none !important; }
 }
+
+/* ---------- Funnel CTA (demo/site chrome — NOT part of the embeddable component) ---------- */
+.mk-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mk-space-2);
+  padding: var(--mk-space-4) var(--mk-space-4) var(--mk-space-3);
+  text-align: center;
+}
+.mk-cta-pro {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mk-font-sans);
+  font-weight: 650;
+  font-size: 1.05rem;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--mk-accent), var(--mk-accent-2));
+  border-radius: 12px;
+  padding: 14px 28px;
+  box-shadow: var(--mk-shadow-1);
+  transition: filter 150ms ease, transform 150ms ease;
+}
+.mk-cta-pro:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.mk-cta-note { margin: 0; font-size: 0.85rem; color: var(--mk-text-3); max-width: 460px; }
+@media (prefers-reduced-motion: reduce) {
+  .mk-cta-pro { transition: none; }
+}
