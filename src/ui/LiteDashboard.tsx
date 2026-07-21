@@ -239,7 +239,7 @@ const LimitsPanel = () => {
 
 /* ---------- Margin by model (locked) ---------- */
 const MarginPanel = () => (
-  <LockedPanel className="mk-glass mk-margin" subtitle="Margens por modelo" testId="locked-margin">
+  <LockedPanel className="mk-glass mk-margin" subtitle="Margin by model" testId="locked-margin">
     <div className="mk-panel-title">Margin by model</div>
     <ol>
       {PRO_PLACEHOLDER.margin.map((r) => (
@@ -259,7 +259,7 @@ const MarginPanel = () => (
 
 /* ---------- Projected spend (locked) ---------- */
 const ForecastPanel = () => (
-  <LockedPanel className="mk-glass mk-forecast" subtitle="Projeção de despesa" testId="locked-forecast">
+  <LockedPanel className="mk-glass mk-forecast" subtitle="Projected spend" testId="locked-forecast">
     <div className="mk-panel-title">Projected spend</div>
     <div className="mk-forecast-row">
       <span className="mk-num mk-forecast-value">{money(PRO_PLACEHOLDER.forecast.projectedSpendCents)}</span>
@@ -271,7 +271,7 @@ const ForecastPanel = () => (
 
 /* ---------- Top spenders (locked) ---------- */
 const TopSpendersPanel = () => (
-  <LockedPanel className="mk-glass mk-panel" subtitle="Por utilizador" testId="locked-top-spenders">
+  <LockedPanel className="mk-glass mk-panel" subtitle="Per-user analytics" testId="locked-top-spenders">
     <div className="mk-panel-title">Top spenders</div>
     <ol className="mk-card mk-spenders">
       {PRO_PLACEHOLDER.topSpenders.map((r, i) => (
@@ -290,7 +290,7 @@ const TopSpendersPanel = () => (
 
 /* ---------- Usage by user (locked) ---------- */
 const UsageByUserPanel = () => (
-  <LockedPanel className="mk-glass mk-panel" subtitle="Por utilizador" testId="locked-usage-by-user">
+  <LockedPanel className="mk-glass mk-panel" subtitle="Per-user analytics" testId="locked-usage-by-user">
     <table className="mk-card mk-usage">
       <caption>Usage by user</caption>
       <thead>

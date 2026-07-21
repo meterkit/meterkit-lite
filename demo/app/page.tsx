@@ -3,8 +3,7 @@ import 'meterkit-lite/ui/lite-dashboard.css';
 
 export default function Page() {
   return (
-    <main style={{ maxWidth: 960, margin: '0 auto', padding: '3rem 1.5rem' }}>
-      <h1>meterkit-lite</h1>
+    <main style={{ maxWidth: 1360, margin: '0 auto', padding: '2.5rem 1.5rem' }}>
       <LiteDashboard data={sampleLiteData} />
     </main>
   );
