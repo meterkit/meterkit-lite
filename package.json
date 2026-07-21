@@ -1,6 +1,6 @@
 {
   "name": "meterkit-lite",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Free MIT token metering & cost tracking for Next.js AI apps — the open funnel for MeterKit.",
   "license": "MIT",
   "type": "module",
@@ -12,6 +12,11 @@
     "./ui/lite-dashboard.css": "./src/ui/lite-dashboard.css"
   },
   "sideEffects": false,
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18.17"
   },

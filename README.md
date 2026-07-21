@@ -40,11 +40,11 @@ import 'meterkit-lite/ui/lite-dashboard.css'; // tokens + dashboard styles (re-e
 <LiteDashboard data={sampleLiteData} />
 ```
 
-## Lite vs. MeterKit (paid)
+## Lite vs. MeterKit Pro (paid)
 
-Lite tracks. **MeterKit enforces** — the dashboard is a bonus; the guard is the product.
+Lite tracks. **MeterKit Pro enforces** — the dashboard is a bonus; the guard is the product.
 
-| | meterkit-lite (free, MIT) | MeterKit (one-time) |
+| | meterkit-lite (free, MIT) | MeterKit Pro (one-time) |
 |---|:---:|:---:|
 | Token metering + cost calc | ✅ | ✅ |
 | OpenAI / Anthropic / embedding extractors | ✅ | ✅ |
@@ -62,5 +62,5 @@ Lite tracks. **MeterKit enforces** — the dashboard is a bonus; the guard is th
 
 ## License
 
-MIT. MeterKit (the full product) is a separate commercial license — see
+MIT. MeterKit Pro (the full product) is a separate commercial license — see
 [meterkit.dev](https://meterkit.dev).
