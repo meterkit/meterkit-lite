@@ -87,7 +87,7 @@
   --mk-text-3: #5b6a85;
   --mk-accent: #0e718c;
   --mk-accent-2: #a21caf;
-  --mk-pos: #047857;
+  --mk-pos: #036b4d; /* ≥4.5:1 on the 14% chip mix in light (AA; #047857 hit 4.49) */
   --mk-warn: #b45309;
   --mk-neg: #be123c;
   --mk-shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.06);
@@ -106,7 +106,7 @@
     --mk-text-3: #5b6a85;
     --mk-accent: #0e718c;
     --mk-accent-2: #a21caf;
-    --mk-pos: #047857;
+    --mk-pos: #036b4d; /* ≥4.5:1 on the 14% chip mix in light (AA; #047857 hit 4.49) */
     --mk-warn: #b45309;
     --mk-neg: #be123c;
     --mk-shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.06);
