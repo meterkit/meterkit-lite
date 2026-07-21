@@ -252,6 +252,7 @@
 .mk-kpi-value-row { display: flex; align-items: center; gap: var(--mk-space-3); }
 .mk-kpi-delta { font-size: var(--mk-text-xs); color: var(--mk-warn); }
 .mk-kpi-delta-down { color: var(--mk-pos); }
+.mk-kpi-caption { color: var(--mk-text-3); font-family: var(--mk-font-mono); font-size: var(--mk-text-xs); letter-spacing: 0.02em; }
 .mk-kpi-spark { width: 100%; height: 28px; margin-top: auto; opacity: 0.85; }
 .mk-kpi-spark path { stroke: var(--mk-accent); }
 /* integrated next to the quota value, not floating in the card corner */
