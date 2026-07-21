@@ -1,25 +1,70 @@
 /* meterkit-lite dashboard styles — Lite-native (NOT extracted from the core).
    Pulls in the pure-copied token/console base, then adds the one net-new piece
-   the LiteDashboard needs: the locked Pro-upsell slot. Import THIS file
+   the LiteDashboard needs: the locked Pro-panel overlay. Import THIS file
    (it re-exports theme.css via @import) to style <LiteDashboard/>. */
 @import './theme.css';
 
-/* ---------- LiteDashboard: locked Pro upsell slot ---------- */
-/* Where Pro would render a live quota/spend-cap meter, Lite shows this locked
-   card instead — same surface language as the rest of the console, but the
-   dashed border + lock glyph mark it as a boundary, not a bug. */
-.mk-lite-locked {
-  display: flex; align-items: flex-start; gap: var(--mk-space-4);
-  background: color-mix(in oklab, var(--mk-surface-2) 60%, transparent);
-  border: 1px dashed var(--mk-border-strong);
+/* ---------- LiteDashboard: locked Pro panel overlay ---------- */
+/* Every Pro-only panel (Quota KPI, Limits, Margin, Projected spend, Top
+   spenders, Usage by user) renders with the *exact same* classes/markup as
+   the Pro console, then gets `mk-locked` added on top. `.mk-locked-content`
+   wraps the real panel markup and is set to `display: contents` so the
+   panel's own layout (flex columns, tables, grids) is completely
+   untouched — only its direct children get blurred/dimmed, individually,
+   which reads as one blurred surface. The overlay sits on top with the
+   lock chip; it is never itself blurred since it lives outside
+   `.mk-locked-content`. */
+.mk-locked { position: relative; }
+.mk-locked-content { display: contents; }
+.mk-locked-content > * {
+  filter: blur(5px) saturate(0.7);
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
 }
-.mk-lite-locked .mk-lock {
-  flex: none; font-size: var(--mk-text-xl); line-height: 1;
-  filter: grayscale(1) opacity(0.75);
+.mk-locked-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mk-space-2);
+  text-align: center;
+  padding: var(--mk-space-3);
+  background: color-mix(in oklab, var(--mk-surface-1) 22%, transparent);
+  border-radius: inherit;
 }
-.mk-lite-locked strong {
-  display: block; font-size: var(--mk-text-s); color: var(--mk-text);
-  margin-bottom: var(--mk-space-1);
+.mk-locked-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in oklab, var(--mk-surface-1) 85%, transparent);
+  border: 1px solid var(--mk-border-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  box-shadow: var(--mk-shadow-1);
 }
-.mk-lite-locked p { margin: 0; font-size: var(--mk-text-s); line-height: 1.5; }
-.mk-lite-locked b { color: var(--mk-accent-2); font-weight: 650; }
+.mk-lock-icon { font-size: var(--mk-text-m); line-height: 1; }
+.mk-locked-title {
+  font-family: var(--mk-font-sans);
+  font-weight: 650;
+  font-size: var(--mk-text-s);
+  color: var(--mk-accent-2);
+  white-space: nowrap;
+}
+.mk-locked-sub {
+  font-size: var(--mk-text-xs);
+  color: var(--mk-text-3);
+  max-width: 220px;
+}
+/* compact variant: used inside the narrow Quota KPI cell in the KPI row */
+.mk-locked-compact .mk-locked-chip { padding: 3px 10px; gap: 4px; }
+.mk-locked-compact .mk-locked-title { font-size: var(--mk-text-xs); }
+.mk-locked-compact .mk-lock-icon { font-size: var(--mk-text-s); }
+.mk-locked-compact .mk-locked-overlay { padding: var(--mk-space-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-locked-content > * { transition: none !important; }
+}

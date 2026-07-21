@@ -3,6 +3,7 @@ import type { Usage } from '../core/usage';
 
 export type LiteDashboardData = {
   total: Usage;
+  requests: number;
   series: UsageBucket[];
   byModel: BreakdownRow[];
 };
@@ -19,19 +20,29 @@ const series: UsageBucket[] = [
   { t: day(20), tokens: 298_200, spendCents: 388 },
 ];
 
+const totalTokens = series.reduce((a, b) => a + b.tokens, 0);
+const totalSpendCents = series.reduce((a, b) => a + b.spendCents, 0);
+
+/** Shares of the series totals — mirrors the Pro sample's approach so the
+ *  KPI row and the by-model breakdown tell one coherent story instead of
+ *  disconnected random numbers. Shares sum to 1 for both tokens and spend. */
+const shareOf = (tokenShare: number, spendShare: number) => ({
+  tokens: Math.round(totalTokens * tokenShare),
+  spendCents: Math.round(totalSpendCents * spendShare),
+});
+
 const byModel: BreakdownRow[] = [
-  { key: 'gpt-4o', tokens: 861_300, spendCents: 1_204 },
-  { key: 'gpt-4o-mini', tokens: 742_800, spendCents: 446 },
-  { key: 'text-embedding-3-small', tokens: 176_000, spendCents: 300 },
+  { key: 'gpt-4o', ...shareOf(0.32, 0.5) },
+  { key: 'claude-sonnet-5', ...shareOf(0.28, 0.3) },
+  { key: 'gpt-4o-mini', ...shareOf(0.26, 0.14) },
+  { key: 'claude-haiku-4-5', ...shareOf(0.14, 0.06) },
 ];
 
 /** Sample data for the README screenshot and the mini-demo. Totals are the sum
  *  of the series so the dashboard numbers are internally consistent. */
 export const sampleLiteData: LiteDashboardData = {
-  total: {
-    tokens: series.reduce((a, b) => a + b.tokens, 0),
-    spendCents: series.reduce((a, b) => a + b.spendCents, 0),
-  },
+  total: { tokens: totalTokens, spendCents: totalSpendCents },
+  requests: 4_216,
   series,
   byModel,
 };
