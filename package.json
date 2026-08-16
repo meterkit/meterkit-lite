@@ -1,7 +1,7 @@
 {
   "name": "meterkit-lite",
-  "version": "1.0.1",
-  "description": "Free MIT token metering & cost tracking for Next.js AI apps — the open funnel for MeterKit Pro.",
+  "version": "1.0.2",
+  "description": "Free MIT token metering and per-user cost tracking for Next.js AI apps.",
   "license": "MIT",
   "type": "module",
   "main": "./src/index.ts",
@@ -27,12 +27,19 @@
   },
   "keywords": [
     "ai",
+    "llm",
     "tokens",
     "metering",
+    "usage-tracking",
+    "cost-tracking",
+    "quotas",
+    "rate-limiting",
+    "billing",
     "openai",
+    "anthropic",
     "nextjs",
-    "cost",
-    "llm"
+    "typescript",
+    "saas"
   ],
   "homepage": "https://meterkit.dev",
   "repository": {
